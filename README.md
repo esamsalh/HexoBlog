@@ -1,4 +1,5 @@
 
-<a href="https://www.baramjonline.com/2021/06/download-ostora-tv-app.html">برنامج الاسطورة</a>
-<a href="https://www.baramjonline.com/2021/06/download-ostora-tv-app.html">ostora tv</a>
-<a href="https://www.baramjonline.com/2022/09/Download-YouTube-without-ads.html">تنزيل يوتيوب بدون اعلانات</a>
+<a href="https://www.pcgamz.com">pcgamz</a>
+<a href="https://www.pcgamz.com/2025/10/Download-GTA-for-PC.html">تحميل لعبة جاتا للكمبيوتر </a>
+<a href="https://home.pcgamz.com">home</a>
+
