@@ -1,356 +1,216 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolRar - كل أدوات الويب التي تحتاجها</title>
+<meta name="description" content="منصة ToolRar المجانية تقدم مجموعة متنوعة من أدوات الويب: أدوات النصوص، أدوات المطورين، أدوات الصور، أدوات PDF، أدوات SEO والمزيد.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; width: 100%; }
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
-  
-  <title>تحميل لعبة جاتا للكمبيوتر</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="App and Games">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="App and Games">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="App and Games" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+  /* HERO - نفس تدرج موقع ToolRar */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to left, #1E3A8A, #080C1A);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    overflow: hidden;
+  }
+
+  /* توهجات خفيفة بنفس ألوان الموقع */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -10%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(99,102,241,0.25), rgba(99,102,241,0.05) 60%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -10%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(16,185,129,0.15), rgba(59,130,246,0.08) 60%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  /* اسم الموقع - أعلى الهيرو */
+  .site-name {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(48px, 9vw, 110px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #6366F1, #A5B4FC, #818CF8, #6366F1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shine 4s linear infinite;
+  }
+  .site-tagline {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(14px, 2vw, 20px);
+    color: #cbd5e1;
+    text-align: center;
+    margin-bottom: 56px;
+    font-weight: 600;
+  }
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  /* شبكة الروابط - يمين ويسار */
+  .links-wrap {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(99,102,241,0.2);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+  }
+  .col-title {
+    font-size: 14px;
+    color: #A5B4FC;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: none;
+    border-bottom: 1px solid rgba(99,102,241,0.25);
+    padding-bottom: 10px;
+  }
+
+  .col a {
+    display: block;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: clamp(15px, 1.6vw, 19px);
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    background: rgba(99,102,241,0.05);
+    border: 1px solid transparent;
+  }
+  .col a:hover {
+    background: rgba(99,102,241,0.18);
+    border-color: rgba(99,102,241,0.5);
+    color: #ffffff;
+    transform: translateX(-4px);
+  }
+
+  /* شريط سفلي صغير */
+  .footer-line {
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+  }
+  .footer-line a {
+    color: #A5B4FC;
+    text-decoration: none;
+  }
+
+  /* موبايل */
+  @media (max-width: 720px) {
+    .links-wrap { grid-template-columns: 1fr; gap: 24px; }
+    .site-name { font-size: 56px; }
+    .col { padding: 18px; }
+  }
+</style>
 </head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">App and Games</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  <section class="hero">
+
+    <!-- اسم الموقع أعلى الهيرو -->
+    <h1 class="site-name">ToolRar</h1>
+    <p class="site-tagline">كل أدوات الويب التي تحتاجها - سريعة وآمنة 100%</p>
+
+    <!-- الروابط: يمين ويسار -->
+    <div class="links-wrap">
+
+      <!-- العمود الأيمن: روابط التنقل الرئيسية -->
+      <div class="col">
+        <div class="col-title">روابط رئيسية</div>
+        <a href="https://www.toolrar.com/" rel="dofollow">الرئيسية</a>
+        <a href="https://www.toolrar.com/all-tools" rel="dofollow">جميع الأدوات</a>
+        <a href="https://www.toolrar.com/sitemap" rel="dofollow">التصنيفات</a>
+        <a href="https://www.toolrar.com/blog" rel="dofollow">المدونة</a>
+        <a href="https://www.toolrar.com/pricing" rel="dofollow">الأسعار</a>
+        <a href="https://www.toolrar.com/about" rel="dofollow">من نحن</a>
+        <a href="https://www.toolrar.com/contact" rel="dofollow">تواصل معنا</a>
       </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Hello-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="#" class="article-date">
-  <time datetime="2019-11-06T23:36:53.000Z" itemprop="datePublished">2019-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="#">App</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="#" data-id="ck2nxm1ko0001vctq26v2507m" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/06/hello-world/" class="article-date">
-  <time datetime="2019-11-06T23:35:04.072Z" itemprop="datePublished">2019-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/Download-Google-Chrome-2021-Google-Chrome-latest-version/">تحميل لعبة جاتا للكمبيوتر</a>
-    </h1>
-  
-
-      </header>
-
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-
-
-
-
-<h2>🕹️    <a href="https://www.pcgamz.com/2025/10/Download-GTA-for-PC.html">تحميل لعبة جاتا للكمبيوتر  </a>: دليلك الشامل لتجربة عالم الجريمة المفتوح</h2>
-
-<p>تُعد سلسلة ألعاب <strong>جاتا (Grand Theft Auto)</strong> واحدة من أشهر سلاسل الألعاب في تاريخ صناعة الألعاب الإلكترونية، وقد حققت نجاحًا عالميًا منذ إصدارها الأول. ومع تطور التكنولوجيا، أصبحت <strong>لعبة جاتا للكمبيوتر</strong> الخيار المثالي لعشاق ألعاب العالم المفتوح، لما توفره من حرية غير مسبوقة في اللعب، ومهام متنوعة، ورسومات واقعية، وتجربة غامرة في عالم الجريمة والمغامرة.</p>
-
-<h3>🧩 ما هي لعبة جاتا؟ ولماذا هي مميزة؟</h3>
-
-<p><strong>جاتا (GTA)</strong> هي اختصار لـ <em>Grand Theft Auto</em>، وهي لعبة فيديو من نوع <strong>أكشن ومغامرات وعالم مفتوح</strong>، طورتها شركة <strong>Rockstar Games</strong>. تدور أحداث اللعبة في مدن خيالية مستوحاة من مدن أمريكية حقيقية، وتمنح اللاعب حرية كاملة في التنقل، تنفيذ المهام، قيادة السيارات، التفاعل مع الشخصيات، وحتى خوض مغامرات جانبية.</p>
-
-<ul>
-  <li>🌍 عالم مفتوح ضخم يمكن استكشافه بحرية.</li>
-  <li>🎭 قصص مشوقة وشخصيات عميقة.</li>
-  <li>🎯 مهمات متعددة تشمل القتال، السباقات، التجسس، والسرقة.</li>
-  <li>🎨 رسومات واقعية وصوتيات عالية الجودة.</li>
-  <li>👥 إمكانية اللعب الفردي أو الجماعي (GTA Online).</li>
-</ul>
-
-<h3>💻 متطلبات تشغيل لعبة جاتا على الكمبيوتر</h3>
-
-<h4>🔸 الحد الأدنى:</h4>
-<ul>
-  <li>نظام التشغيل: Windows 7/8/10 (64-bit)</li>
-  <li>المعالج: Intel Core 2 Quad أو AMD Phenom</li>
-  <li>الرام: 4 جيجابايت</li>
-  <li>كرت الشاشة: NVIDIA 9800 GT أو AMD HD 4870</li>
-  <li>المساحة المطلوبة: 72 جيجابايت</li>
-</ul>
-
-<h4>🔹 الموصى به:</h4>
-<ul>
-  <li>نظام التشغيل: Windows 10 (64-bit)</li>
-  <li>المعالج: Intel Core i5 أو AMD FX-8350</li>
-  <li>الرام: 8 جيجابايت أو أكثر</li>
-  <li>كرت الشاشة: NVIDIA GTX 660 أو AMD HD 7870</li>
-  <li>المساحة المطلوبة: 80 جيجابايت</li>
-</ul>
-
-<h3>📥 خطوات تحميل وتثبيت لعبة جاتا للكمبيوتر</h3>
-
-<ol>
-  <li><strong>اختيار المصدر الموثوق:</strong> مثل Epic Games أو Rockstar Games.</li>
-  <li><strong>إنشاء حساب وتحميل المشغل:</strong> قم بتحميل Launcher الخاص بالشركة.</li>
-  <li><strong>شراء أو تفعيل اللعبة:</strong> عبر المتجر أو مفتاح منتج. <a href="https://www.pcgamz.com">pcgamz  </a>   </li>
-  <li><strong>بدء التحميل والتثبيت:</strong> تأكد من وجود مساحة كافية وانتظر حتى يكتمل التحميل.</li>
-</ol>
-
-<h3>🎮 أبرز إصدارات جاتا للكمبيوتر</h3>
-
-<table border="1" cellpadding="8" cellspacing="0">
-  <thead>
-    <tr>
-      <th>الإصدار</th>
-      <th>سنة الإصدار</th>
-      <th>أبرز المميزات</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GTA Vice City</td>
-      <td>2002</td>
-      <td>أجواء الثمانينات، مدينة ميامي الخيالية</td>
-    </tr>
-    <tr>
-      <td>GTA San Andreas</td>
-      <td>2004</td>
-      <td>خريطة ضخمة، شخصيات متنوعة، مهام جانبية كثيرة</td>
-    </tr>
-    <tr>
-      <td>GTA IV</td>
-      <td>2008</td>
-      <td>رسومات محسنة، قصة درامية عميقة</td>
-    </tr>
-    <tr>
-      <td>GTA V</td>
-      <td>2013 (PC: 2015)</td>
-      <td>عالم مفتوح ضخم، 3 شخصيات رئيسية، GTA Online</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>🧨 المهمات داخل اللعبة: تنوع لا نهائي</h3>
-
-<p>تقدم لعبة جاتا <strong>مهمات متعددة</strong> تتنوع بين:</p>
-
-<ul>
-  <li>🔫 مهام القتل والتفجير لصالح زعماء العصابات.</li>
-  <li>🏎️ مهام السباق والتحديات الحركية.</li>
-  <li>🕵️ مهام التجسس والتسلل.</li>
-  <li>💰 مهام السرقة والسطو على البنوك.</li>
-  <li>📦 مهام جانبية لجمع الأموال وفتح مناطق جديدة.</li>
-</ul>
-
-<p>كل مهمة تنجح في تنفيذها تمنحك <strong>مكافآت مالية</strong> و<strong>امتيازات خاصة</strong مثل الدخول إلى أماكن محظورة أو اكتشاف مناطق جديدة على الخريطة.</p>
-
-<h3>🌐 هل يمكن لعب جاتا بدون إنترنت؟</h3>
-
-<p>نعم، يمكنك لعب <strong>طور القصة (Story Mode)</strong> بدون الحاجة إلى اتصال بالإنترنت. لكن إذا أردت تجربة <strong>GTA Online</strong>، فستحتاج إلى اتصال دائم بالشبكة.</p>
-
-<h3>🔧 نصائح لتحسين تجربة اللعب</h3>
-
-<ul>
-  <li>🛠️ استخدم أدوات تحسين الأداء لتقليل التقطيع.</li>
-  <li>📥 قم بتحديث تعريف كرت الشاشة باستمرار.</li>
-  <li>⚙️ استخدم المودات بحذر وتأكد من توافقها مع إصدار اللعبة.</li>
-  <li>💾 احرص على حفظ تقدمك في اللعبة بشكل دوري.</li>
-</ul>
-
-<h3>🧠 هل لعبة جاتا مناسبة للجميع؟</h3>
-
-<p>رغم أن اللعبة ممتعة، إلا أنها <strong>مخصصة للبالغين</strong> بسبب احتوائها على مشاهد عنف، لغة نابية، ومحتوى غير مناسب للأطفال. تأكد من مراجعة <strong>تصنيف PEGI أو ESRB</strong> قبل السماح للأطفال بلعبها.</p>
-
-<h3>🏁 خاتمة</h3>
-
-<p><strong> <a href="https://www.pcgamz.com/2025/10/Download-GTA-for-PC.html">تحميل لعبة جاتا للكمبيوتر  </a></strong> هو بوابتك إلى عالم مليء بالمغامرات، التحديات، والحرية المطلقة. سواء كنت من عشاق القتال أو السباقات أو استكشاف المدن، ستجد في GTA تجربة لا تُنسى. فقط تأكد من تحميلها من مصدر موثوق، وتأكد من أن جهازك يلبي المتطلبات، واستعد للانغماس في واحدة من أعظم ألعاب العالم المفتوح على الإطلاق.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/06/hello-world/" data-id="ck2nxm1kb0000vctqg8d7gbi9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="#">App</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/30/Download-Google-Chrome-2021-Google-Chrome-latest-version/">تحميل لعبة جاتا للكمبيوتر</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+      <!-- العمود الأيسر: أقسام الأدوات -->
+      <div class="col">
+        <div class="col-title">أقسام الأدوات</div>
+        <a href="https://www.toolrar.com/text-tools/" rel="dofollow">أدوات النصوص والكلمات</a>
+        <a href="https://www.toolrar.com/Developer/" rel="dofollow">أدوات المطورين</a>
+        <a href="https://www.toolrar.com/Photo-Editing/" rel="dofollow">أدوات الصور والتصميم</a>
+        <a href="https://www.toolrar.com/Calculators/" rel="dofollow">أدوات الحاسبة</a>
+        <a href="https://www.toolrar.com/docs-tools/" rel="dofollow">أدوات PDF</a>
+        <a href="https://www.toolrar.com/sitemap" rel="dofollow">خريطة الموقع</a>
+        <a href="https://www.toolrar.com/privacy" rel="dofollow">سياسة الخصوصية</a>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+
     </div>
-  </div>
-</footer>
+
+    <div class="footer-line">
+      © ToolRar - منصة أدوات الويب المجانية
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  </section>
 
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
+  <script>
+    // تأثير خفيف عند تحميل الصفحة: ظهور تدريجي للروابط
+    document.addEventListener('DOMContentLoaded', function () {
+      var links = document.querySelectorAll('.col a');
+      links.forEach(function (el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(10px)';
+        setTimeout(function () {
+          el.style.transition = 'opacity 0.4s ease, transform 0.4s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 120 + i * 60);
+      });
+    });
+  </script>
 </body>
 </html>
