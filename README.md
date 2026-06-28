@@ -1,5 +1,5 @@
 
-<a href="https://www.pcgamz.com">pcgamz</a>
-<a href="https://www.pcgamz.com/2025/10/Download-GTA-for-PC.html">تحميل لعبة جاتا للكمبيوتر </a>
-<a href="https://home.pcgamz.com">home</a>
+<a href="https://www.toolrar.com">toolrar</a>
+<a href="https://www.toolrar.com/text-tools/word-counter">عداد الكلمات </a>
+<a href="https://www.toolrar.com/Calculators/">الحاسبات</a>
 
